@@ -260,6 +260,8 @@
                           textout.splice(l+1,1,ptable[xyval[1]]);
                         }
                       }
+                      //var str = "a,d,k";
+                      textout = textout.toString().replace( /,/g, "" );
                       document.getElementById("decoded").innerHTML =textout;
                 }
 
@@ -436,6 +438,7 @@
                       }
                     }
                     //The following prints the encoded text to the browser:
+                    textout = textout.toString().replace( /,/g, "" );
                     document.getElementById("encoded").innerHTML =textout;
                     console.log("digraphs changed:"+ chgrec);
                   }
