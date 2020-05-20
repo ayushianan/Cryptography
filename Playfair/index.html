@@ -65,6 +65,8 @@
                     //First, retrieve the value that was submitted:
                     var x = document.getElementById("cipherin");
                     var cipher = x.value;
+                    if(cipher.length>6)
+                      var cipher = cipher.slice(-6);
                     //create an array of the alphabet, minus the letter j. This is so I have 25 elements for my 5x5 cipher 'square'
 
                     var alph = ['a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
