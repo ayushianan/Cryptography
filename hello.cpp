@@ -14,7 +14,7 @@ int main()
   cout<<"         ##########################           "<<"\n";
   cout<<"              Cuustomer cipher                "<<"\n";
   cout<<"         ##########################           "<<"\n";
-  int c;
+  int c,lj,ind=0;
   string k;string normal="";
   string ct="";
   string matrix="";
@@ -32,6 +32,9 @@ int main()
         case 1: k=inputs();
                 matrix=made(k);
                 normal=inputs();
+                lj=normal.length();
+                if(lj%2!=0)
+                  ind=1;
                 ct=code(normal,matrix);
                 outputs(ct);
                 break;
@@ -39,7 +42,10 @@ int main()
                 matrix=made(k);
                 ct=inputs();
                 normal=decode(ct,matrix);
+                if(ind==1)
+                  normal.erase(lj);
                 outputs(normal);
+                ind=0;
                 break;
         case 3: exit(0);
         default:cout<<"w*r*o*n*g"<<"\n";
@@ -184,10 +190,20 @@ int r(string a,int p1)
 }
 string made(string temp)
 {
-    string m=temp;
-    int len=temp.length();
-    len=r(temp,len);
-    m=l(temp,len);string a;
+    int h=temp.length();
+    h--;
+    string temp1;
+    char t;
+    for(int i=0;i<6;i++)
+    {
+      t=temp[h];
+      temp1=temp1+t;
+      h--;
+    }
+    string m=temp1;
+    int len=temp1.length();
+    len=r(temp1,len);
+    m=l(temp1,len);string a;
     int i=0,k=0,v=0,c=0;
     bool flag = true;
     for (int p = 0;p<len;p++)
