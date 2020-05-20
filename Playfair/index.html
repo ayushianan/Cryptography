@@ -117,6 +117,9 @@
                   var y1 = document.getElementById("encodedtextin");
                   var textin = y1.value;
                   var textin = textin.split("");
+                  var y2 = document.getElementById("plaintextin");
+                  var textin2= y2.value;
+                  var textin2 = textin2.split("");
 
                   var ptable = ciphersquare(cipher);
                   var chgrec=[];
@@ -261,6 +264,16 @@
                         }
                       }
                       //var str = "a,d,k";
+                      //var y1 = document.getElementById("plaintextin");
+                      //var textin1 = y1.value;
+                      //var textin 1= textin1.split("");
+                      for(i=0;i<textout.length;i=i+1){
+                          if (textout[i]=='i'&&textin2[i]!='i'){
+                            textout.splice(i,1,'j');
+                          }
+                      }
+                      if((textin2.length)%2!=0)
+                        textout.pop();
                       textout = textout.toString().replace( /,/g, "" );
                       document.getElementById("decoded").innerHTML =textout;
                 }
@@ -273,11 +286,16 @@
                     var textin = textin.split("");
                     // If there are an uneven amount of letters, append a 'z' to complete
                     if ((textin.length%2)==1){
-                        textin.push('z');
+                        textin.push('x');
                     }
                     else{
                     }
                     console.log("hi");
+                    for(i=0;i<textin.length;i=i+1){
+                        if (textin[i]=='j'){
+                          textin.splice(i,1,'i');
+                        }
+                    }
                 //Now check to see if there are two of the same letters in any given digraph, then in those digraphs change the second letter to an 'x'
                     for(i=0;i<textin.length;i=i+2){
                         if (textin[i]==textin[i+1]){
