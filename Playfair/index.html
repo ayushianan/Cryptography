@@ -28,8 +28,8 @@
                             <div class="tm-slide-content-div">
                                 <form action="index.html" id="search-form">
 
-                                    <h3 class="text-uppercase">Secure Transmission of messages</h3>
-                                    <p class="m-b-mid">Encryption and Decryption using Playfair</p>
+                                    <h2 class="text-uppercase">Playfair Cipher</h2>
+                                    <p class="m-b-mid">Gateway for secure transmission of messages using Encryption and Decryption</p>
                                     <div class="form-group">
 
                                             <p>Enter Customer Name</p>
@@ -61,15 +61,11 @@
             </section>
 
             <script>
-
-
-
-
                 function ciphersquare(cipher) {
                     //First, retrieve the value that was submitted:
                     var x = document.getElementById("cipherin");
                     var cipher = x.value;
-                    //I create an array of the alphabet, minus the letter j. This is so I have 25 elements for my 5x5 cipher 'square'
+                    //create an array of the alphabet, minus the letter j. This is so I have 25 elements for my 5x5 cipher 'square'
 
                     var alph = ['a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
                     //I then iterate through the alphabet array and remove all the letters that already occur in my cipher key
