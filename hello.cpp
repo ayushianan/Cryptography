@@ -366,33 +366,27 @@ string prepare(string txtin,int n)
 }
 string inputs()
 {
-    ifstream Inputs;string h,e;
-    cout<<"Please enter filename"<<"\n";
+    ifstream Inputs;string h,e;cout<<"Please enter filename"<<"\n";
     cin>> e;
     Inputs.open(e.c_str(),ios::in);
     if(!Inputs)
-    {
-        cout<<"error"<< "\n";
+    {  cout<<"error"<< "\n";
         return 0;
     }
     while(Inputs)
-    {
-        Inputs >> h;
+    {Inputs >> h;
     }
-    Inputs.close();
-    return h;
+    Inputs.close();return h;
 }
 void outputs(string h)
 {
-    ofstream outs;string e;
-    cout<<"enter file name"<<"\n";
+    ofstream outs;string e;cout<<"enter file name"<<"\n";
     cin>>e;
     outs.open(e.c_str(), ios :: out);
     if(!outs)
         cout<<"error"<<"\n";
     if(outs.is_open())
-    {
-        outs<<h;
+    {outs<<h;
         outs.close();
     }
 }
